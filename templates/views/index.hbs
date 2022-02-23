@@ -1,0 +1,45 @@
+{{>header}}
+
+    <div id="hero" class="hero overlay pb-50">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p>Real-Time World Weather Data</p>
+                <h1>Access Global Weather Data </h1>
+                <p>Get instant access to accurate weather data for any geo-point in the world.</p>
+                <a href="#" class="btn btn-border">Learn more</a>
+            </div><!-- /.hero-text -->
+        </div><!-- /.hero-content -->
+    </div><!-- /.hero -->
+    
+    <div class="row mt-50 pb-50">
+        <div class="col-md-8 col-md-offset-2">
+            <h2 class="text-center heading-separator">Search Weather!</h2>
+            <form>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            
+                            <input type="location" class="form-control" id="location" placeholder="Ex. Los angeles">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-20">
+                    <button class="btn btn-green">Search</button>
+                </div>
+            </form>
+        </div>
+    </div><!-- /.form -->
+    {{!-- <div class="row mt-50 mb-50 "></div> --}}
+    <div class="row mt-50 mb-50 ">
+        <div class="col-md-8 col-md-offset-2 p50">
+            <p id="errorPara" class=" font-20 font-bold text-danger"></p>
+            <p id="messagePara" class=" font-20 font-bold"></p>
+        </div>
+    </div>
+
+
+    {{>footer}}
+  
+</body>
+<script src="/assets/js/app.js"></script>
+</html>

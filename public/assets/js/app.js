@@ -9,7 +9,7 @@ weatherForm.addEventListener("submit", (e) => {
   errorPara.textContent = "";
   messagePara.textContent = "Loading...";
 
-  const url = `http://localhost:3000/weather?search=${encodeURIComponent(
+  const url = `/weather?search=${encodeURIComponent(
     locationField.value.trimEnd()
   )}`;
 

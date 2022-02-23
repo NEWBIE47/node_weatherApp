@@ -5,7 +5,7 @@ const forecast = require("./utils/forecast");
 const geoCode = require("./utils/geoCode");
 
 const app = express();
-
+const port = process.env.PORT || 3000;
 //Define paths for Expressjs Config
 const publicUrlPath = path.join(__dirname, "../public");
 const viewPath = path.join(__dirname, "../templates/views");
@@ -105,6 +105,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("App started on port 3000 !");
+app.listen(port, () => {
+  console.log(`App started on port ${port} !`);
 });

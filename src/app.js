@@ -51,43 +51,9 @@ app.get("/contact", (req, res) => {
 });
 
 app.get("/weather", (req, res) => {
-  if (!req.query.search) {
-    return res.send({
-      title: "Weather",
-      message: "",
-      error: "Please provide a search query to get the weather information!",
-    });
-  }
-  const searchQuery = req.query.search;
-  geoCode(searchQuery, (error, { locationName, latitude, longitude } = {}) => {
-    if (error) {
-      return res.send({
-        title: "Weather",
-        message: "",
-        error: error,
-      });
-    }
-    forecast(
-      latitude,
-      longitude,
-      (error, { weather_descriptions, temperature, feelsLike } = {}) => {
-        if (error) {
-          return res.send({
-            title: "Weather",
-            error: error,
-          });
-        }
-        const message = `Its ${weather_descriptions} now with a temperature of ${temperature} degrees F and it feels like ${feelsLike} degrees F. at ${locationName}`;
-        res.send({
-          title: "Weather",
-          locationName: locationName,
-          message: message,
-          temperature: temperature,
-          weather_descriptions: weather_descriptions,
-          feelsLike: feelsLike,
-        });
-      }
-    );
+  res.render("weather", {
+    title: "Weather page",
+    heading: "Welcome to the Weather page",
   });
 });
 

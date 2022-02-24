@@ -1,6 +1,6 @@
 {
-    "short_name": "HackTheStuff",
-    "name": "HackTheStuff blogging platform",
+    "short_name": "F Weather",
+    "name": "Fire Weather",
     "icons": [
         {
          "src": "/assets/img/manifest-icon-192.maskable.png",
@@ -27,7 +27,7 @@
           "purpose": "maskable"
         }
       ],
-    "start_url": "src/app.js",
+    "start_url": "/",
     "background_color": "#3367D6",
     "display": "standalone",
     "theme_color": "#3367D6"

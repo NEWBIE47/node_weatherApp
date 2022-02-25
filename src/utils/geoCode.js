@@ -6,7 +6,7 @@ const geoCode = (searchQuery, callback) => {
   const geoCodeUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
     searchQuery
   )}.json?access_token=${accessToken}&limit=1`;
-  request({ url: geoCodeUrl, json: true }, (error, { body }) => {
+  request({ url: geoCodeUrl, json: true }, (error, { body } = {}) => {
     if (error) {
       const errorMessage = `Unable to process the request at this time, please check your internet connection and try again.`;
       callback(errorMessage, undefined);

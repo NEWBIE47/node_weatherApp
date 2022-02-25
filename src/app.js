@@ -70,14 +70,17 @@ app.get("/weather", (req, res) => {
     forecast(
       latitude,
       longitude,
-      (error, { weather_descriptions, temperature, feelsLike } = {}) => {
+      (
+        error,
+        { weather_descriptions, temperature, feelsLike, humidity } = {}
+      ) => {
         if (error) {
           return res.send({
             title: "Weather",
             error: error,
           });
         }
-        const message = `Its ${weather_descriptions} now with a temperature of ${temperature} degrees F and it feels like ${feelsLike} degrees F. at ${locationName}`;
+        const message = `Its ${weather_descriptions} now with a temperature of ${temperature} degrees F and humidity ${humidity}% it feels like ${feelsLike} degrees F. at ${locationName}`;
         res.send({
           title: "Weather",
           locationName: locationName,
@@ -85,6 +88,7 @@ app.get("/weather", (req, res) => {
           temperature: temperature,
           weather_descriptions: weather_descriptions,
           feelsLike: feelsLike,
+          humidity: humidity,
         });
       }
     );
